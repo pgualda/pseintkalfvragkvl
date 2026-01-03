@@ -7,3 +7,7 @@ funciona con enter (13), espacio (32) y izq (37) arriba (38) derecha (39) abajo 
 parche: como a veces si hace falta esperar sin escuchar el teclado y no queria complicarme use este truco (muy precario) si el valor en milisegundos es modulo de 50, activa la escucha de teclado, sino, no.
 
 Es un portable, hay que bajar el zip, descomprimir y buscar el ejecutable en la carpeta \bin\wxpseint.exe
+
+Para descargar busca en "releases". los fuentes estan en el zip. 
+
+Esta es solo una compilacion para mis alumnos, si quieres y puedes mejorar el concepto o el proyecto! adelante!
