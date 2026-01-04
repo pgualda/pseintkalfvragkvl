@@ -12,3 +12,4 @@ Para descargar busca en "releases". los fuentes estan en el zip.
 
 Esta es solo una compilacion para mis alumnos, si quieres y puedes mejorar el concepto o el proyecto! adelante!
 Basado en el código original de PSeInt de Pablo Novara en pseint.sourceforge.net
+Autor de los cambios y el codigo laberinto.psc Norberto Daniel Gualda. Profesor de Informatica. Epet 20. Neuquen. Argentina.
