@@ -11,3 +11,4 @@ Es un portable, hay que bajar el zip, descomprimir y buscar el ejecutable en la 
 Para descargar busca en "releases". los fuentes estan en el zip. 
 
 Esta es solo una compilacion para mis alumnos, si quieres y puedes mejorar el concepto o el proyecto! adelante!
+Basado en el código original de PSeInt de Pablo Novara en pseint.sourceforge.net
