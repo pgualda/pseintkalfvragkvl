@@ -24,7 +24,7 @@ Algoritmo kraken
     // pantalla - solo lo que se muestra	
 	// asset1="[]]   [[]   []]   [[]  -=-   -_-" // para que pueda verse como queda
 	// asset2="[[]   []]   -=-   -_-  []]   [[]"
-	Dimensionar s[6,2]
+	Dimensionar s[3,2]
 	s[1,1]="[]][[]"
     s[1,2]="[[][]]"
 	s[2,1]="[]]-=-"
@@ -87,6 +87,7 @@ Algoritmo kraken
     		// si el movimiento es un conjunto de casillas libres lo hace
 		    wposx=posx
     		wposy=posy
+			wpose=1 // pose x defecto
 		    si tecla=37
 				wpose=1
     			wposx=posx-1
