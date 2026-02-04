@@ -19,17 +19,30 @@ Autor de los cambios y el codigo laberinto.psc Norberto Daniel Gualda. Profesor 
 Ejemplo de codigo:
 
 Algoritmo capturateclas
+
 	seguir="si"
+	
 	escribir "presiona <Enter> para salir o usa los cursores para ver que codigo aparece"
+	
 	mientras seguir="si"
+
 		esperar 200 Milisegundos
+		
 		tecla=ultimatecla(1)
+		
 		esperar 190 Milisegundos // fuerza una esperar real (valores en Milisegundos no modulos de 50)
-	    si tecla<> 0 
+	    
+		si tecla<> 0 
+		
 			escribir tecla
-		FinSi
+		
+		Finsi
+		
 		si tecla=13
+
 			seguir="no"
+
 		FinSi
+
 	FinMientras
 FinAlgoritmo
