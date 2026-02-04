@@ -33,4 +33,3 @@ Algoritmo capturateclas
 		FinSi
 	FinMientras
 FinAlgoritmo
-
