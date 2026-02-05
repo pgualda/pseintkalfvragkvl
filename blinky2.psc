@@ -1,4 +1,4 @@
-Algoritmo blinky1
+Algoritmo blinky2
 	Dimensionar wfondo[10],toshow[10,30],dires[4,2]
 	wfondo[1] ="##############################"
 	wfondo[2] ="#                            #"
@@ -87,3 +87,4 @@ Algoritmo blinky1
 	FinMientras
 	escribir "te agarro!"
 FinAlgoritmo
+
