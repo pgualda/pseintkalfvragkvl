@@ -1,0 +1,276 @@
+Algoritmo manera1
+	// estrategia:
+	// super simple vamos nro x nro preguntando si es mayor que 
+	// los otros dos
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 1"
+	leer a,b,c
+	si a>b
+		si a>c
+			mayor=a
+		FinSi
+	FinSi
+	si b>c
+		si b>a
+			mayor=b
+		FinSi
+	FinSi
+	si c>a
+		si c>b
+			mayor=c
+		FinSi
+	FinSi
+    escribir "el mayor es:",mayor	
+FinAlgoritmo
+
+Algoritmo manera2
+	// estrategia:
+	// aprovechamos que luego del primer si (a>b) ya sabemos que a
+	// no es el mayor en el sino y solo preguntamos x b o c, 
+	// lo mismo luego de a>c, nos ahorramos algunas preguntas.
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 2"
+	leer a,b,c
+	si a>b
+		si a>c
+			mayor=a
+		SiNo
+			si b>c
+				mayor=b
+			SiNo
+				mayor=c
+			FinSi
+		FinSi
+	SiNo
+		si b>c
+			mayor=b
+		SiNo
+			mayor=c
+		FinSi
+	FinSi
+    escribir "el mayor es:",mayor	
+FinAlgoritmo
+
+Algoritmo manera3
+	// estrategia:
+    // usamos una variable mayor como flag transitorio, si a no es el 
+	// mayor, solo nos resta preguntar x b o c.
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 3"
+	leer a,b,c
+	si a>b
+		si a>c
+			mayor=a
+		FinSi
+	finsi
+	si mayor=0
+		si b>c
+			mayor=b
+		sino
+			mayor=c
+		FinSi
+	FinSi
+    escribir "el mayor es:",mayor	
+FinAlgoritmo
+
+Algoritmo manera4
+	// estrategia:
+    // usamos el operador logico Y el algoritmo se vuelve mucho mas
+	// simple y elegante, es probablemente la mejor solucion con 3 
+	// variables.
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 4"
+	leer a,b,c
+	mayor=0
+	si a>b y a>c
+		mayor=a
+	sino
+		si b>c
+			mayor=b
+		sino
+			mayor=c
+		FinSi
+	FinSi
+    escribir "el mayor es:",mayor	
+FinAlgoritmo
+
+Algoritmo manera5
+	// estrategia:
+	// primer pasada de un algoritmo de burbuja
+	// usamos una variable de trabajo w para hacer las intercambios
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 5"
+	leer a,b,c
+	si a>b
+		w=a
+		a=b
+		b=w
+	FinSi
+	si b>c
+		w=b
+		b=c
+		c=w
+	FinSi
+    escribir "el mayor es:",c
+FinAlgoritmo
+
+Algoritmo manera6
+	// estrategia:
+	// primer pasada de un algoritmo de burbuja
+	// logramos hacer los intercambios sin una variable auxiliar
+	// en alguna situacion de restriccion extrema de memoria quiza sea util
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 6"
+	leer a,b,c
+	si a>b
+		a=a+b
+		b=a-b
+		a=a-b
+	FinSi
+	si b>c
+		b=b+c
+		c=b-c
+		b=b-c
+	FinSi
+    escribir "el mayor es:",c
+FinAlgoritmo
+
+Algoritmo manera7
+	// estrategia:
+	// ingresar los numeros en una repetiva e ir guardando el mayor
+	// muy muy facil para escalarlo (en lugar de 3 n numeros).
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 7"
+	mayor=0
+	para x=1 hasta 3
+		leer n
+		si n>mayor
+			mayor=n
+		FinSi
+	FinPara
+    escribir "el mayor es:",mayor
+FinAlgoritmo
+
+Algoritmo manera8
+	// estrategia:
+	// cargar los valores en un arreglo y luego barrerlo para obtener el >
+	// con este metodo la ventaja es que no solo es facil de escalar
+	// sino tambien que preserva todos los valores.
+	Dimensionar n[3]
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 8"
+	mayor=0
+	leer n[1],n[2],n[3]
+	para x=1 hasta 3
+		si n[x]>mayor
+			mayor=n[x]
+		FinSi
+	FinPara
+    escribir "el mayor es:",mayor
+FinAlgoritmo
+
+Algoritmo manera9
+	// estrategia:
+	// cargar los valores en un arreglo y luego hacer una primer pasada
+	// de un metodo de burbuja, el ultimo elemento sera el mayor.
+	// muy facil de escalar y util para empezar a conocer el metodo de burbuja
+	Dimensionar n[3]
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 9"
+	leer n[1],n[2],n[3]
+	para x=1 hasta 2
+		si n[x]>n[x+1]
+			w=n[x]
+			n[x]=n[x+1]
+			n[x+1]=w
+		FinSi
+	FinPara
+    escribir "el mayor es:",n[3]
+FinAlgoritmo
+
+Algoritmo manera10
+	// estrategia:
+	// asumimos que uno de los valores ya es el mayor y lo validamos 
+	// contra el resto, optmiza las condicionales.
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 10"
+	leer a,b,c
+	mayor=a
+	si b>mayor
+		mayor=b
+	FinSi
+	si c>mayor
+		mayor=c
+	FinSi
+    escribir "el mayor es:",mayor
+FinAlgoritmo
+
+Algoritmo manera11
+	// estrategia:
+	// calcular el mayor SIN CONDICIONALES, usando la funcion valor absoluto
+	// esta bueno para conocer trucos matematicos
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 11"
+	leer a,b,c
+	mayor=(a+b+abs(a-b))/2
+	mayor=(mayor+c+abs(mayor-c))/2
+    escribir "el mayor es:",mayor
+FinAlgoritmo
+
+// parametros nro decimal y posicion de bit, devuelve valor del bit
+Funcion valorbitn <- obtienebit(num,nbit) 
+	desplazado = TRUNC(num / (2 ^ nbit))
+	valorbitn = desplazado MOD 2
+FinFuncion
+// parametros nro decimal y posicion de bit, devuelve valor del bit
+Funcion valorbitn <- obtienebit(num,nbit) 
+	desplazado = TRUNC(num / (2 ^ nbit))
+	valorbitn = desplazado MOD 2
+FinFuncion
+
+Algoritmo manera12
+	// estrategia:
+	// con un poco de complejidad adicional vamos a llevar
+	// 3 contadores a 0.el que mas tarda que sera el mayor.
+	// al comenzar tendremos una mascara
+	// en binario de todos 1 (7 en decimal, 4+2+1) y al irse
+	// cerrando las cuentas regresivas iremos cambiando la
+	// mascara para que solo reste en los contadores que
+	// aun tienen cantidad.
+	// estan comentadas varias lineas que permiten ver el estado de las variables.
+	escribir "Ingresa 3 enteros positivos distintos para"
+	escribir "saber cual es el mayor, manera nro 12"
+	leer a,b,c
+	// copiamos los valores
+	ca=a
+	cb=b
+	cc=c
+	mascara=7 // todos uno 4+2+1
+	mientras mascara<>4 y mascara<>2 y mascara<>1 // 100 - 10 - 1 indican salida, solo queda un valor.
+		// escribir "antes  :",a, " ", b, " ", c, " ", mascara
+		a=a-obtienebit(mascara,0)
+        si a<1 y obtienebit(mascara,0)=1
+  			mascara=mascara-1
+    	FinSi
+		b=b-obtienebit(mascara,1)
+        si b<1 y obtienebit(mascara,1)=1
+  			mascara=mascara-2
+    	FinSi
+		c=c-obtienebit(mascara,2)
+        si c<1 y obtienebit(mascara,2)=1
+  			mascara=mascara-4
+    	FinSi
+		// escribir "despues:",a, " ", b, " ", c, " ", mascara
+		// esperar tecla
+	FinMientras
+    si mascara=4
+		mayor=cc
+	SiNo
+		si mascara=2
+			mayor=cb
+		SiNo
+			mayor=ca
+		FinSi
+	FinSi
+    escribir "el mayor es:",mayor
+FinAlgoritmo
